@@ -14,10 +14,10 @@
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/actionHomeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/itemHome" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/itemHome"
         android:name="com.shem.ubayalibrary.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
@@ -29,10 +29,10 @@
             app:destination="@id/thesisFragment" />
         <action
             android:id="@+id/action_homeFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            app:destination="@id/itemHistory" />
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/itemProfile" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -49,12 +49,12 @@
         android:label="fragment_book"
         tools:layout="@layout/fragment_book" />
     <fragment
-        android:id="@+id/historyFragment"
+        android:id="@+id/itemHistory"
         android:name="com.shem.ubayalibrary.view.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/itemProfile"
         android:name="com.shem.ubayalibrary.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
