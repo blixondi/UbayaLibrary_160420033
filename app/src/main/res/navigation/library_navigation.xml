@@ -3,38 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/library_navigation"
-    app:startDestination="@id/loginFragment">
-
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.shem.ubayalibrary.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionLoginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="com.shem.ubayalibrary.view.BookFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_book" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.shem.ubayalibrary.view.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.shem.ubayalibrary.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.shem.ubayalibrary.view.LoginFragment"
-        android:label="UBAYA Library - Login"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/actionHomeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/actionRegisterFragment"
-            app:destination="@id/registerFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.shem.ubayalibrary.view.RegisterFragment"
-        android:label="UBAYA Library - Register"
-        tools:layout="@layout/fragment_register">
-        <action
-            android:id="@+id/actionLoginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
-    </fragment>
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.shem.ubayalibrary.view.HomeFragment"
-        android:label="UBAYA Library"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/thesisFragment"
+        android:name="com.shem.ubayalibrary.view.ThesisFragment"
+        android:label="fragment_thesis"
+        tools:layout="@layout/fragment_thesis" />
 </navigation>
