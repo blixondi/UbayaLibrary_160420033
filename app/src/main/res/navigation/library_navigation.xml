@@ -75,7 +75,11 @@
         android:id="@+id/bookDetailFragment"
         android:name="com.shem.ubayalibrary.view.BookDetailFragment"
         android:label="fragment_book_detail"
-        tools:layout="@layout/fragment_book_detail" />
+        tools:layout="@layout/fragment_book_detail" >
+        <argument
+            android:name="book_id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/thesisDetailFragment"
         android:name="com.shem.ubayalibrary.view.ThesisDetailFragment"

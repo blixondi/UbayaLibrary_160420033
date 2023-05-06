@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.shem.ubayalibrary.model.Book
+import org.json.JSONObject
 
 class BookListViewModel (Application: Application): AndroidViewModel(Application) {
     val booksLD = MutableLiveData<ArrayList<Book>>()
@@ -24,7 +25,7 @@ class BookListViewModel (Application: Application): AndroidViewModel(Application
         loadingLD.value = true
         bookLoadErrorLD.value = false
         queue = Volley.newRequestQueue(getApplication())
-        val url = "https://noinheim.my.id/ubayalib_api/student.php"
+        val url = "https://noinheim.my.id/ubayalib_api/get_books.php"
 
         val stringRequest = StringRequest(
             Request.Method.GET, url,
@@ -33,9 +34,7 @@ class BookListViewModel (Application: Application): AndroidViewModel(Application
                 val result = Gson().fromJson<ArrayList<Book>>(it, sType)
                 booksLD.value = result
                 loadingLD.value = false
-
                 Log.d("showvoley", result.toString())
-
             },
             {
                 Log.d("showvoley", it.toString())
