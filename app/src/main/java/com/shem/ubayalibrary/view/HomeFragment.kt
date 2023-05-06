@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.shem.ubayalibrary.R
 
 
@@ -20,7 +21,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val btnBrowseBook = view.findViewById<Button>(R.id.btnBrowseBook)
+        val btnBrowseThesis = view.findViewById<Button>(R.id.btnBrowseThesis)
+        btnBrowseBook.setOnClickListener {
+        }
     }
 
 }

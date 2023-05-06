@@ -22,17 +22,17 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_bookFragment"
-            app:destination="@id/bookFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_thesisFragment"
-            app:destination="@id/thesisFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_historyFragment"
             app:destination="@id/itemHistory" />
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/itemProfile" />
+        <action
+            android:id="@+id/actionBookFragment"
+            app:destination="@id/bookFragment" />
+        <action
+            android:id="@+id/actionThesisFragment"
+            app:destination="@id/thesisFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -46,8 +46,12 @@
     <fragment
         android:id="@+id/bookFragment"
         android:name="com.shem.ubayalibrary.view.BookFragment"
-        android:label="fragment_book"
-        tools:layout="@layout/fragment_book" />
+        android:label="Browse Books"
+        tools:layout="@layout/fragment_book">
+        <action
+            android:id="@+id/actionBookDetail"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/itemHistory"
         android:name="com.shem.ubayalibrary.view.HistoryFragment"
@@ -61,6 +65,20 @@
     <fragment
         android:id="@+id/thesisFragment"
         android:name="com.shem.ubayalibrary.view.ThesisFragment"
-        android:label="fragment_thesis"
-        tools:layout="@layout/fragment_thesis" />
+        android:label="Browse Thesis"
+        tools:layout="@layout/fragment_thesis">
+        <action
+            android:id="@+id/actionThesisDetail"
+            app:destination="@id/thesisDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.shem.ubayalibrary.view.BookDetailFragment"
+        android:label="fragment_book_detail"
+        tools:layout="@layout/fragment_book_detail" />
+    <fragment
+        android:id="@+id/thesisDetailFragment"
+        android:name="com.shem.ubayalibrary.view.ThesisDetailFragment"
+        android:label="fragment_thesis_detail"
+        tools:layout="@layout/fragment_thesis_detail" />
 </navigation>
