@@ -39,7 +39,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:singleLine="false"
-                android:text="Judul Tesis"
+                android:text="Judul Buku"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintStart_toEndOf="@+id/imgBuku"
                 app:layout_constraintTop_toTopOf="parent" />
