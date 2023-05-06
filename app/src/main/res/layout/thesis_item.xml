@@ -29,7 +29,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Judul Buku"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/imgTesis"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Penulis"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/imgTesis"
                 app:layout_constraintTop_toBottomOf="@+id/txtJudulTesis" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:text="2023"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/imgTesis"
                 app:layout_constraintTop_toBottomOf="@+id/txtPenulisTesis" />
 
             <Button
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtTahunTesis" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imgTesis"
                 android:layout_width="110dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"

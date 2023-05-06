@@ -23,7 +23,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imgBuku"
                 android:layout_width="110dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
@@ -40,7 +40,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Judul Tesis"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/imgBuku"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Penulis"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/imgBuku"
                 app:layout_constraintTop_toBottomOf="@+id/txtJudulTesis" />
 
             <TextView
@@ -61,7 +61,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:text="2023"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/imgBuku"
                 app:layout_constraintTop_toBottomOf="@+id/txtPenulisTesis" />
 
             <Button
