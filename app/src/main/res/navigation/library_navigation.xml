@@ -10,9 +10,6 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/actionRegisterFragment"
-            app:destination="@id/registerFragment" />
-        <action
             android:id="@+id/actionHomeFragment"
             app:destination="@id/itemHome" />
     </fragment>
@@ -33,15 +30,6 @@
         <action
             android:id="@+id/actionThesisFragment"
             app:destination="@id/thesisFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.shem.ubayalibrary.view.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-        <action
-            android:id="@+id/actionLoginFragment"
-            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookFragment"
