@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.Navigation
 import com.shem.ubayalibrary.R
 
 
@@ -24,6 +25,12 @@ class HomeFragment : Fragment() {
         val btnBrowseBook = view.findViewById<Button>(R.id.btnBrowseBook)
         val btnBrowseThesis = view.findViewById<Button>(R.id.btnBrowseThesis)
         btnBrowseBook.setOnClickListener {
+            val action = HomeFragmentDirections.actionBookFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+        btnBrowseThesis.setOnClickListener {
+            val action = HomeFragmentDirections.actionThesisFragment()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 
