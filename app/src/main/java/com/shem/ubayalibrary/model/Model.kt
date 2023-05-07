@@ -29,3 +29,18 @@ data class Thesis(
     val tahunTerbit: String?,
     val jenis_pustaka: String?
 )
+
+data class History(
+    val judul: String?,
+    val gambar: String?,
+    val status: String?,
+    val tanggal: String?
+)
+
+data class User(
+    val id: String?,
+    val username: String?,
+    val password: String?,
+    val firstname: String?,
+    val lastname: String?
+)
