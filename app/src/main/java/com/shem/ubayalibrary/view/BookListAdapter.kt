@@ -28,10 +28,10 @@ class BookListAdapter(val bookList: ArrayList<Book>):RecyclerView.Adapter<BookLi
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val txtJudulBuku =holder.view.findViewById<TextView>(R.id.txtJudulTesis)
-        val txtPenulisBuku = holder.view.findViewById<TextView>(R.id.txtPenulisTesis)
-        val txtTahunBuku = holder.view.findViewById<TextView>(R.id.txtTahunTesis)
-        val btnDetailBuku = holder.view.findViewById<Button>(R.id.btnDetailTesis)
+        val txtJudulBuku =holder.view.findViewById<TextView>(R.id.txtJudulBuku)
+        val txtPenulisBuku = holder.view.findViewById<TextView>(R.id.txtPenulisBuku)
+        val txtTahunBuku = holder.view.findViewById<TextView>(R.id.txtTahunBuku)
+        val btnDetailBuku = holder.view.findViewById<Button>(R.id.btnDetailBuku)
         val progressBar = holder.view.findViewById<ProgressBar>(R.id.progressBar)
         val imgBuku = holder.view.findViewById<ImageView>(R.id.imgBuku)
         val idBuku = bookList[position].bookId.toString()

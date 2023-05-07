@@ -21,47 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txtJudulTesis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:text="Judul Buku"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toEndOf="@+id/imgTesis"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtPenulisTesis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                android:text="Penulis"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintStart_toEndOf="@+id/imgTesis"
-                app:layout_constraintTop_toBottomOf="@+id/txtJudulTesis" />
-
-            <TextView
-                android:id="@+id/txtTahunTesis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                android:text="2023"
-                app:layout_constraintStart_toEndOf="@+id/imgTesis"
-                app:layout_constraintTop_toBottomOf="@+id/txtPenulisTesis" />
-
-            <Button
-                android:id="@+id/btnDetailTesis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:text="Lihat detail"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTahunTesis" />
-
             <ImageView
                 android:id="@+id/imgTesis"
                 android:layout_width="110dp"
@@ -81,6 +40,51 @@
                 app:layout_constraintEnd_toEndOf="@+id/imgTesis"
                 app:layout_constraintStart_toStartOf="@+id/imgTesis"
                 app:layout_constraintTop_toTopOf="@+id/imgTesis" />
+
+            <TextView
+                android:id="@+id/txtJudulTesis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:singleLine="false"
+                android:text="Judul Tesis"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgTesis"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtPenulisTesis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Penulis"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintStart_toEndOf="@+id/imgTesis"
+                app:layout_constraintTop_toBottomOf="@+id/txtJudulTesis" />
+
+            <TextView
+                android:id="@+id/txtTahunTesis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="2023"
+                app:layout_constraintStart_toEndOf="@+id/imgTesis"
+                app:layout_constraintTop_toBottomOf="@+id/txtPenulisTesis" />
+
+            <Button
+                android:id="@+id/btnDetailTesis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="16dp"
+                android:text="Lihat Detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
