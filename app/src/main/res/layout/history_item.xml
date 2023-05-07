@@ -66,6 +66,16 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintStart_toEndOf="@+id/imgHistory"
                 app:layout_constraintTop_toBottomOf="@+id/txtStatusPinjam" />
+
+            <ProgressBar
+                android:id="@+id/progressBarImgHistory"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/imgHistory"
+                app:layout_constraintEnd_toEndOf="@+id/imgHistory"
+                app:layout_constraintStart_toStartOf="@+id/imgHistory"
+                app:layout_constraintTop_toTopOf="@+id/imgHistory" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
