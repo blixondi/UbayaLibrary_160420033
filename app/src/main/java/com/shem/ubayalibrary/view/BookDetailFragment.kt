@@ -1,34 +1,23 @@
 package com.shem.ubayalibrary.view
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import com.shem.ubayalibrary.R
+import com.shem.ubayalibrary.util.loadImage
+import com.shem.ubayalibrary.viewmodel.BookDetailViewModel
+import org.w3c.dom.Text
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BookDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BookDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var viewModel: BookDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +27,41 @@ class BookDetailFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_book_detail, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BookDetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BookDetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var book_id = ""
+
+        arguments?.let{
+            book_id = BookDetailFragmentArgs.fromBundle(requireArguments()).bookId
+        }
+        viewModel = ViewModelProvider(this).get(BookDetailViewModel::class.java)
+        viewModel.fetch(book_id)
+
+        val txtJudulDetail = view.findViewById<TextView>(R.id.txtJudulDetail)
+        val txtDetailPengarang = view.findViewById<TextView>(R.id.txtDetailPengarang)
+        val txtPenerbit = view.findViewById<TextView>(R.id.txtPenerbit)
+        val txtDimensi = view.findViewById<TextView>(R.id.txtDimensi)
+        val txtIsbn = view.findViewById<TextView>(R.id.txtIsbn)
+        val txtKetersediaan = view.findViewById<TextView>(R.id.txtKetersediaan)
+        val txtSinopsis = view.findViewById<TextView>(R.id.txtSinopsis)
+        val imgDetailBuku = view.findViewById<ImageView>(R.id.imgDetailBuku)
+        val progressBar3 = view.findViewById<ProgressBar>(R.id.progressBar3)
+
+        viewModel.bookLD.observe(viewLifecycleOwner) {book->
+            txtJudulDetail.text = book.bookTitle
+            txtDetailPengarang.text = "Pengarang ${book.penulis}"
+            txtPenerbit.text = "Penerbit: ${book.penerbit}, ${book.tahunTerbit}"
+            txtDimensi.text = "Dimensi: ${book.dimensi}"
+            txtIsbn.text = "ISBN: ${book.isbn}"
+            txtKetersediaan.text = "Ketersediaan: ${book.ketersediaan}"
+            if(book.ketersediaan == "Tersedia"){
+                txtKetersediaan.setTextColor(Color.parseColor("#59FB03"))
+            } else{
+                txtKetersediaan.setTextColor(Color.parseColor("#FB0303"))
             }
+            txtSinopsis.text = book.sinopsis
+            imgDetailBuku.loadImage(book.gambar, progressBar3)
+        }
     }
+
 }

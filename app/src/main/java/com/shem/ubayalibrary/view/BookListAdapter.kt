@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.ImageView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.shem.ubayalibrary.R
 import com.shem.ubayalibrary.model.Book
@@ -33,13 +34,14 @@ class BookListAdapter(val bookList: ArrayList<Book>):RecyclerView.Adapter<BookLi
         val btnDetailBuku = holder.view.findViewById<Button>(R.id.btnDetailBuku)
         val progressBar = holder.view.findViewById<ProgressBar>(R.id.progressBar)
         val imgBuku = holder.view.findViewById<ImageView>(R.id.imgBuku)
-        val idBuku = bookList[position].bookId
+        val idBuku = bookList[position].bookId.toString()
         imgBuku.loadImage(bookList[position].gambar, progressBar)
         txtJudulBuku.text = bookList[position].bookTitle
         txtPenulisBuku.text = bookList[position].penulis
         txtTahunBuku.text = bookList[position].tahunTerbit
         btnDetailBuku.setOnClickListener {
-
+            val action = BookFragmentDirections.actionBookDetail(idBuku)
+            Navigation.findNavController(it).navigate(action)
         }
     }
 

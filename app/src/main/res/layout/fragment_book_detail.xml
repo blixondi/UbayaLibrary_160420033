@@ -30,11 +30,11 @@
 
                 <TextView
                     android:id="@+id/txtJudulDetail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="160dp"
+                    android:layout_marginEnd="20dp"
                     android:singleLine="false"
                     android:text="Judul Detail"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -99,7 +99,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtDimensi" />
 
                 <TextView
-                    android:id="@+id/txtIsbn2"
+                    android:id="@+id/txtKetersediaan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
@@ -121,7 +121,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/imgDetailBuku" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/txtSinopsis"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -135,6 +135,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lblSinopsis"
                     app:layout_goneMarginLeft="20dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar3"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgDetailBuku"
+                    app:layout_constraintEnd_toEndOf="@+id/imgDetailBuku"
+                    app:layout_constraintStart_toStartOf="@+id/imgDetailBuku"
+                    app:layout_constraintTop_toTopOf="@+id/imgDetailBuku" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
