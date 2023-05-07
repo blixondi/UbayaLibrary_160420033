@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/txtJudulBuku"
+                android:id="@+id/txtJudulTesis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtPenulisBuku"
+                android:id="@+id/txtPenulisTesis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -41,26 +41,26 @@
                 android:text="Penulis"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintStart_toEndOf="@+id/imgTesis"
-                app:layout_constraintTop_toBottomOf="@+id/txtJudulBuku" />
+                app:layout_constraintTop_toBottomOf="@+id/txtJudulTesis" />
 
             <TextView
-                android:id="@+id/txtTahunBuku"
+                android:id="@+id/txtTahunTesis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:text="2023"
                 app:layout_constraintStart_toEndOf="@+id/imgTesis"
-                app:layout_constraintTop_toBottomOf="@+id/txtPenulisBuku" />
+                app:layout_constraintTop_toBottomOf="@+id/txtPenulisTesis" />
 
             <Button
-                android:id="@+id/btnDetailBuku"
+                android:id="@+id/btnDetailTesis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:text="Lihat detail"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTahunBuku" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTahunTesis" />
 
             <ImageView
                 android:id="@+id/imgTesis"

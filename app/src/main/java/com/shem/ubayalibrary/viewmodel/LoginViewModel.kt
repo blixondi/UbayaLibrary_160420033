@@ -26,9 +26,7 @@ class LoginViewModel (Application: Application): AndroidViewModel(Application){
             {
                 val result = Gson().fromJson<User>(it, User::class.java)
                 userLD.value = result
-
                 Log.d("showvoley", result.toString())
-
             },
             {
                 Log.d("showvoley", it.toString())

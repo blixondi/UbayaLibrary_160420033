@@ -2,8 +2,12 @@ package com.shem.ubayalibrary.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.appcompat.app.ActionBar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
@@ -26,6 +30,16 @@ class MainActivity : AppCompatActivity() {
         val navView = findViewById<NavigationView>(R.id.navView)
         bottomNav.setupWithNavController(navController)
         NavigationUI.setupWithNavController(navView, navController)
+
+        navController.addOnDestinationChangedListener{navController, d: NavDestination, arguments->
+            if(d.id == R.id.loginFragment){
+                bottomNav.visibility = View.GONE
+                navView.visibility = View.GONE
+            } else {
+                bottomNav.visibility = View.VISIBLE
+                navView.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
