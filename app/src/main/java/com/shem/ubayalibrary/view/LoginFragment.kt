@@ -8,11 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.google.android.material.textfield.TextInputEditText
 import com.shem.ubayalibrary.R
-
-
+import com.shem.ubayalibrary.viewmodel.LoginViewModel
 
 
 class LoginFragment : Fragment() {
@@ -29,7 +29,6 @@ class LoginFragment : Fragment() {
         val txtUsername = view.findViewById<TextInputEditText>(R.id.txtUsername)
         val txtPassword = view.findViewById<TextInputEditText>(R.id.txtPassword)
         val btnLogin = view.findViewById<Button>(R.id.btnLogin)
-
         btnLogin.setOnClickListener {
             val action = LoginFragmentDirections.actionHomeFragment()
             Navigation.findNavController(it).navigate(action)
