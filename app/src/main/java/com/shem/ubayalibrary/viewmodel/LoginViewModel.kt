@@ -12,9 +12,11 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.shem.ubayalibrary.model.Book
 import com.shem.ubayalibrary.model.User
+import org.json.JSONObject
 
 class LoginViewModel (Application: Application): AndroidViewModel(Application){
     val userLD = MutableLiveData<User>()
+    val statusLD = MutableLiveData<String>()
     val TAG = "volleyTag"
     private var queue: RequestQueue? = null
 
@@ -35,6 +37,31 @@ class LoginViewModel (Application: Application): AndroidViewModel(Application){
                 val map = HashMap<String, String>()
                 map.set("username", username)
                 map.set("password", password)
+                return map
+            }
+        }
+        stringRequest.tag = TAG
+        queue?.add(stringRequest)
+    }
+
+    fun updatePass(password: String, id: String) {
+        queue = Volley.newRequestQueue(getApplication())
+        val url = "https://noinheim.my.id/ubayalib_api/update_pass.php"
+        val stringRequest = object : StringRequest(
+            Request.Method.POST, url,
+            {
+                val obj = JSONObject(it)
+                val result = obj.getString("result")
+                statusLD.value = result
+                Log.d("showvoley", result.toString())
+            },
+            {
+                Log.d("showvoley", it.toString())
+            }) {
+            override fun getParams(): MutableMap<String, String> {
+                val map = HashMap<String, String>()
+                map.set("password", password)
+                map.set("id", id)
                 return map
             }
         }
