@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.shem.ubayalibrary.R
 import com.shem.ubayalibrary.viewmodel.LoginViewModel
@@ -27,9 +29,13 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val shared: SharedPreferences? = activity?.getSharedPreferences("UbayaLibrary",
             AppCompatActivity.MODE_PRIVATE)
         val editor: SharedPreferences.Editor? = shared?.edit()
+
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
         val txtFirstname = view.findViewById<EditText>(R.id.txtEditFirstname)
         val txtLastname = view.findViewById<EditText>(R.id.txtEditLastname)
         val txtUsername = view.findViewById<EditText>(R.id.txtEditUsername)
@@ -43,10 +49,35 @@ class ProfileFragment : Fragment() {
         val currentlname = shared?.getString(LoginFragment.currentlname, (-1).toString())
         val currentusername = shared?.getString(LoginFragment.currentuname, (-1).toString())
         val currentpw = shared?.getString(LoginFragment.currentpass, (-1).toString())
+        val currentid = shared?.getString(LoginFragment.currentid, (-1).toString())
+        val newPass = txtConfirmPass.text.toString()
 
         txtFirstname.setText(currentfname)
         txtLastname.setText(currentlname)
         txtUsername.setText(currentusername)
+
+        btnChangePass.setOnClickListener {
+            if(txtOldPass.text.toString() == currentpw){
+                if(txtNewPass.text.toString() == txtConfirmPass.text.toString()){
+                    if (currentid != null) {
+                        viewModel.updatePass(newPass, currentid)
+                        viewModel.statusLD.observe(viewLifecycleOwner){
+                            if(it == "success"){
+                                Toast.makeText(activity, "Successfully changed password!", Toast.LENGTH_SHORT).show()
+                                editor?.remove("CURRENTPASS")
+                                editor?.apply()
+                                editor?.putString(LoginFragment.currentpass, newPass)
+                                editor?.apply()
+                            }
+                        }
+                    }
+                } else{
+                    Toast.makeText(activity, "New password did not match!", Toast.LENGTH_SHORT).show()
+                }
+            } else{
+                Toast.makeText(activity, "Wrong password!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         btnLogout.setOnClickListener {
             editor?.remove("IDUSER")
