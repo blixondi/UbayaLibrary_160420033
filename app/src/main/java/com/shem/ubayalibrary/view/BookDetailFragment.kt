@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.shem.ubayalibrary.R
 import com.shem.ubayalibrary.util.loadImage
 import com.shem.ubayalibrary.viewmodel.BookDetailViewModel
-import org.w3c.dom.Text
 
 
 class BookDetailFragment : Fragment() {
