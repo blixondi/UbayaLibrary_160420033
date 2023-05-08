@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/thesisRec"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ThesisFragment">
@@ -18,7 +17,7 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/recViewThesis"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="1dp"
@@ -35,20 +34,20 @@
                 style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
-                app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+                app:layout_constraintBottom_toBottomOf="@+id/recViewThesis"
+                app:layout_constraintEnd_toEndOf="@+id/recViewThesis"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+                app:layout_constraintTop_toTopOf="@+id/recViewThesis" />
 
             <TextView
                 android:id="@+id/txtErrorThesis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Error loading data"
-                app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
-                app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+                app:layout_constraintBottom_toBottomOf="@+id/recViewThesis"
+                app:layout_constraintEnd_toEndOf="@+id/recViewThesis"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+                app:layout_constraintTop_toTopOf="@+id/recViewThesis" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </FrameLayout>
