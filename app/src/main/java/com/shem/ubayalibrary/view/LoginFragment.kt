@@ -24,6 +24,7 @@ class LoginFragment : Fragment() {
     private lateinit var viewModel: LoginViewModel
     companion object{
         val currentid = "IDUSER"
+        val currentuname = "CURRENTUNAME"
         val currentpass = "CURRENTPASS"
         val currentfname = "CURRENTFNAME"
         val currentlname = "CURRENTLNAME"
@@ -71,6 +72,7 @@ class LoginFragment : Fragment() {
                         editor?.putString(currentpass, currentPass)
                         editor?.putString(currentfname, currentFirstname)
                         editor?.putString(currentlname, currentLastname)
+                        editor?.putString(currentuname, currentUsername)
                         editor?.apply()
                         val action = LoginFragmentDirections.actionHomeFragment()
                         Navigation.findNavController(it).navigate(action)
