@@ -19,9 +19,7 @@ import com.shem.ubayalibrary.R
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
-    /* CHANGES HERE */
     private var toggleMenu: Boolean = false
-    /* CHANGES HERE */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
